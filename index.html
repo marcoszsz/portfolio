@@ -631,6 +631,29 @@
       else header.classList.remove("bg-slate-950/90", "backdrop-blur");
     });
 
+    addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    });
+
+   addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        card.addEventListener("mouseenter", () => {
+          card.classList.add("hovered");
+        });
+        card.addEventListener("mouseleave", () => {
+          card.classList.remove("hovered");
+        });
+      });
+    });
+
 
   </script>
 </body>
