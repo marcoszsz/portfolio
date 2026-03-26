@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcus Miguel | Desenvolvedor Backend</title>
+  <meta name="description"
+    content="Portfólio de Marcus Miguel, desenvolvedor backend focado em APIs, automação e sistemas escaláveis com Node.js, PostgreSQL, Docker e Prisma." />
+  <meta name="author" content="Marcus Miguel" />
+  <meta name="theme-color" content="#020617" />
+
+  <meta property="og:title" content="Marcus Miguel | Desenvolvedor Backend" />
+  <meta property="og:description"
+    content="APIs, automação e sistemas escaláveis com Node.js, PostgreSQL, Docker e Prisma." />
+  <meta property="og:type" content="website" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #020617;
+    }
+
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 24px rgba(168, 85, 247, 0.22);
+      border-color: rgba(168, 85, 247, 0.45);
+    }
+
+    .btn {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
+    }
+
+    .tag {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(4px);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c084fc 0%, #a855f7 50%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+
+<body class="text-white font-sans antialiased">
+  <div id="particles" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur fade">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#inicio" class="text-lg md:text-xl font-bold text-purple-400">Marcus Miguel<span
+          class="text-white">.dev</span></a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-300">
+        <a href="#sobre" class="hover:text-purple-400 transition">Sobre</a>
+        <a href="#habilidades" class="hover:text-purple-400 transition">Habilidades</a>
+        <a href="#projetos" class="hover:text-purple-400 transition">Projetos</a>
+        <a href="#github" class="hover:text-purple-400 transition">GitHub</a>
+        <a href="#contato" class="hover:text-purple-400 transition">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-10 fade">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span
+            class="inline-flex items-center rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300 mb-6">
+            Disponível para projetos e oportunidades
+          </span>
+
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            Desenvolvedor Full Stack focado em
+            <span class="gradient-text">APIs, automação e sistemas escaláveis</span>
+          </h1>
+
+          <p class="text-gray-400 text-lg max-w-2xl mb-8">
+            Construo soluções robustas com Node.js, PostgreSQL, Docker e Prisma.
+            Meu foco é transformar ideias em sistemas completos, bem estruturados e prontos para crescer.
+            <br>
+            <br>
+            Também tenho experiência com frontend de apoio usando Tailwind, HTML e CSS para criar interfaces objetivas e
+            funcionais, como landing pages e painéis simples.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#projetos"
+              class="bg-purple-500 hover:bg-purple-400 text-white px-6 py-3 rounded-xl btn font-medium">
+              Ver projetos pessoais
+            </a>
+            <a href="#contato"
+              class="border border-white/15 hover:border-purple-400 px-6 py-3 rounded-xl btn font-medium text-gray-100">
+              Entrar em contato
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3 text-sm text-gray-300">
+            <span class="tag px-3 py-2 rounded-xl">Node.js</span>
+            <span class="tag px-3 py-2 rounded-xl">PostgreSQL</span>
+            <span class="tag px-3 py-2 rounded-xl">Docker</span>
+            <span class="tag px-3 py-2 rounded-xl">Prisma</span>
+            <span class="tag px-3 py-2 rounded-xl">JavaScript</span>
+            <span class="tag px-3 py-2 rounded-xl">Tailwind</span>
+            <span class="tag px-3 py-2 rounded-xl">Git</span>
+            <span class="tag px-3 py-2 rounded-xl">APIs REST</span>
+            <span class="tag px-3 py-2 rounded-xl">Arquitetura de Software</span>
+          </div>
+        </div>
+
+        <div class="card rounded-3xl bg-white/5 p-8">
+          <p class="text-sm uppercase tracking-[0.2em] text-purple-300 mb-4">Resumo profissional</p>
+          <div class="space-y-5 text-gray-300">
+            <div>
+              <h2 class="font-semibold text-white mb-1">Especialidade</h2>
+              <p>Full Stack,Suporte N1, automação de processos, APIs REST e estruturação de sistemas completos.</p>
+            </div>
+            <div>
+              <h2 class="font-semibold text-white mb-1">Stack principal</h2>
+              <p>Node.js, JavaScript, PostgreSQL, Docker, Prisma, Tailwind e Git.</p>
+            </div>
+            <div>
+              <h2 class="font-semibold text-white mb-1">Objetivo</h2>
+              <p>Desenvolver soluções eficientes, seguras e escaláveis para problemas reais.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="max-w-5xl mx-auto px-6 py-16 fade">
+      <div class="card rounded-3xl bg-white/5 p-8 md:p-10">
+        <h2 class="text-3xl font-bold mb-5">Sobre mim</h2>
+        <p class="text-gray-400 leading-8">
+          Sou desenvolvedor Full Stack com foco em criação de APIs, automação e sistemas completos.
+          <br>
+          Gosto de construir soluções organizadas, performáticas e fáceis de manter.
+          Trabalho principalmente com Node.js, PostgreSQL, Docker e Prisma, sempre buscando arquitetura limpa,
+          boa experiência para quem usa o sistema e um código que consiga evoluir com o tempo.
+        </p>
+      </div>
+    </section>
+
+    <section id="habilidades" class="max-w-6xl mx-auto px-6 py-16 fade">
+      <img class="mx-auto mb-8 w-20 " src="/images/Habilidades.png" alt="Habilidades">
+      <h2 class="text-3xl font-bold mb-8 text-center">Habilidades</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card bg-white/5 rounded-2xl p-6">
+          <h3 class="font-semibold text-purple-300 mb-3">Backend</h3>
+          <p class="text-gray-400 text-sm leading-7">Node.js, JavaScript, APIs REST, autenticação, arquitetura de
+            serviços e integração entre sistemas.</p>
+        </div>
+
+        <div class="card bg-white/5 rounded-2xl p-6">
+          <h3 class="font-semibold text-purple-300 mb-3">Banco de Dados</h3>
+          <p class="text-gray-400 text-sm leading-7">PostgreSQL, modelagem relacional, queries, organização de dados e
+            uso de ORM com Prisma.</p>
+        </div>
+
+        <div class="card bg-white/5 rounded-2xl p-6">
+          <h3 class="font-semibold text-purple-300 mb-3">DevOps</h3>
+          <p class="text-gray-400 text-sm leading-7">Docker, ambiente de desenvolvimento consistente, versionamento com
+            Git e deploy de aplicações.</p>
+        </div>
+
+        <div class="card bg-white/5 rounded-2xl p-6">
+          <h3 class="font-semibold text-purple-300 mb-3">Frontend de apoio</h3>
+          <p class="text-gray-400 text-sm leading-7">Tailwind, HTML e CSS para interfaces objetivas, landing pages e
+            painéis simples.</p>
+        </div>
+
+        <div class="card bg-white/5 rounded-2xl p-6">
+          <h3 class="font-semibold text-purple-300 mb-3">Bots & Automação</h3>
+          <p class="text-gray-400 text-sm leading-7">
+            Criação de bots para WhatsApp, Telegram e Discord,
+            automação de processos, integrações com APIs e rotinas automáticas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="max-w-6xl mx-auto px-6 py-16 fade">
+
+      <h2 class="text-3xl font-bold mb-8 text-center">Projetos em destaque</h2>
+      <img class="mx-auto mb-8 w-20 " src="/images/Projetos.png" alt="Projetos">
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <article class="card bg-white/5 rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-purple-400">NEXUS API</h3>
+            <span class="text-xs text-gray-400">Projeto principal</span>
+          </div>
+          <p class="text-gray-400 mb-4">
+            API completa para autenticação, gerenciamento de usuários, integrações e automações.
+          </p>
+          <p class="text-sm text-gray-500">Node.js • PostgreSQL • Docker • Prisma</p>
+        </article>
+
+        <article class="card bg-white/5 rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-purple-400">Info Saúde</h3>
+            <span class="text-xs text-gray-400">Sistema</span>
+          </div>
+          <p class="text-gray-400 mb-4">
+            Solução voltada para organização e visualização de informações, com foco em clareza e utilidade prática.
+          </p>
+          <p class="text-sm text-gray-500">Node.js • PostgreSQL • HTML/CSS</p>
+        </article>
+
+        <article class="card bg-white/5 rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold text-purple-400">Automações</h3>
+            <span class="text-xs text-gray-400">Produtividade</span>
+          </div>
+          <p class="text-gray-400 mb-4">
+            Scripts e fluxos para automatizar tarefas repetitivas, integrações e ganho de produtividade.
+          </p>
+          <p class="text-sm text-gray-500">JavaScript • APIs • Node.js</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicos" class="max-w-6xl mx-auto px-6 py-16 fade">
+      <h2 class="text-3xl font-bold mb-8 text-center">Serviços</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card bg-white/5 p-6 rounded-2xl">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">APIs Backend</h3>
+          <p class="text-gray-400">Criação de APIs REST seguras e escaláveis.</p>
+        </div>
+
+        <div class="card bg-white/5 p-6 rounded-2xl">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Automações</h3>
+          <p class="text-gray-400">Automação de processos e integrações entre sistemas.</p>
+        </div>
+
+        <div class="card bg-white/5 p-6 rounded-2xl">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Sistemas Web</h3>
+          <p class="text-gray-400">Desenvolvimento de sistemas completos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="max-w-5xl mx-auto px-6 py-16 fade">
+      <div class="card bg-white/5 rounded-3xl p-8 md:p-10 text-center">
+        <h2 class="text-3xl font-bold mb-4">Contato</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+          Curtiu o projeto? Bora conversar sobre oportunidades, freelas, APIs, automações ou sistemas sob medida.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://linkedin.com/in/seuusuario" target="_blank" rel="noopener noreferrer"
+            class="bg-purple-500 hover:bg-purple-400 px-6 py-3 rounded-xl btn">
+            LinkedIn
+          </a>
+          <a href="https://github.com/marcoszsz" target="_blank" rel="noopener noreferrer"
+            class="border border-gray-600 hover:border-purple-400 px-6 py-3 rounded-xl btn">
+            GitHub
+          </a>
+          <a href="mailto:seuemail@exemplo.com"
+            class="border border-gray-600 hover:border-purple-400 px-6 py-3 rounded-xl btn">
+            Email
+          </a>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer"
+            class="border border-gray-600 hover:border-purple-400 px-6 py-3 rounded-xl btn">
+            WhatsApp
+          </a>
+
+        </div>
+
+    
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500 text-sm">
+      © <span id="year"></span> Marcus Miguel. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    tsParticles.load("particles", {
+      background: { color: "transparent" },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 40, density: { enable: true, area: 900 } },
+        color: { value: "#a855f7" },
+        opacity: { value: 0.25 },
+        size: { value: { min: 1, max: 3 } },
+        move: { enable: true, speed: 1, outModes: { default: "bounce" } },
+        links: {
+          enable: true,
+          distance: 130,
+          color: "#7c3aed",
+          opacity: 0.12,
+          width: 1
+        }
+      },
+      detectRetina: true
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".fade").forEach((el) => observer.observe(el));
+
+    const username = "marcoszsz";
+    const selectedRepos = ["Cieges", "Info-Saude", "PORTIFOLIOO"];
+
+    async function loadRepos() {
+      const container = document.getElementById("repos");
+      container.innerHTML = `
+        <div class="md:col-span-2 xl:col-span-3 text-center text-gray-400 py-8">
+          Carregando projetos...
+        </div>
+      `;
+
+      try {
+        const cards = [];
+
+        for (const repoName of selectedRepos) {
+          const res = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
+          if (!res.ok) throw new Error(`Erro ao carregar ${repoName}`);
+          const repo = await res.json();
+
+          cards.push(`
+            <article class="card bg-white/5 p-6 rounded-2xl">
+              <img
+                src="https://opengraph.githubassets.com/1/${username}/${repo.name}"
+                alt="Prévia do projeto ${repo.name}"
+                class="rounded-xl mb-4 w-full h-auto"
+                loading="lazy"
+              />
+
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <h3 class="text-xl font-bold text-purple-400">${repo.name}</h3>
+                <span class="text-xs text-gray-500 whitespace-nowrap">${repo.language || "Sem linguagem"}</span>
+              </div>
+
+              <p class="text-gray-400 mb-4">
+                ${repo.description || "Projeto sem descrição."}
+              </p>
+
+              <div class="text-sm text-gray-500 mb-4">
+                ⭐ ${repo.stargazers_count} &nbsp; • &nbsp; 🍴 ${repo.forks_count}
+              </div>
+
+              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:underline">
+                Ver projeto →
+              </a>
+            </article>
+          `);
+        }
+
+        container.innerHTML = cards.join("");
+      } catch (error) {
+        container.innerHTML = `
+          <div class="md:col-span-2 xl:col-span-3 text-center text-red-300 py-8">
+            Não foi possível carregar os repositórios agora.
+          </div>
+        `;
+        console.error(error);
+      }
+    }
+
+    document.querySelectorAll("a").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.style.transform = "scale(0.98)";
+        setTimeout(() => { btn.style.transform = ""; }, 120);
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    loadRepos();
+  </script>
+</body>
+
+</html>
