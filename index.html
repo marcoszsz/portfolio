@@ -5,27 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marcus Miguel | Desenvolvedor Full Stack</title>
-  <meta name="description"
-    content="Portfólio de Marcus Miguel, desenvolvedor full stack focado em APIs, automação e sistemas escaláveis com Node.js, PostgreSQL, Docker e Prisma." />
-  <meta name="author" content="Marcus Miguel" />
-  <meta name="theme-color" content="#020617" />
-
-  <meta property="og:title" content="Marcus Miguel | Desenvolvedor Full Stack" />
-  <meta property="og:description"
-    content="APIs, automação e sistemas escaláveis com Node.js, PostgreSQL, Docker e Prisma." />
-  <meta property="og:type" content="website" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #020617;
-    }
+    html { scroll-behavior: smooth; }
+    body { background: #020617; }
 
     #particles {
       position: fixed;
@@ -35,8 +21,8 @@
 
     .fade {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(30px);
+      transition: 0.8s;
     }
 
     .fade.show {
@@ -45,38 +31,34 @@
     }
 
     .card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 24px rgba(168, 85, 247, 0.22);
-      border-color: rgba(168, 85, 247, 0.45);
-    }
-
-    .btn {
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      box-shadow: 0 0 25px rgba(168,85,247,0.3);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
+      box-shadow: 0 0 15px #a855f7;
     }
 
     .tag {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      padding: 6px 12px;
+      border-radius: 10px;
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, #c084fc 0%, #a855f7 50%, #7c3aed 100%);
+      background: linear-gradient(90deg,#c084fc,#a855f7,#7c3aed);
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
     }
 
+    /* Loader */
     #page-loader {
       position: fixed;
       inset: 0;
@@ -86,34 +68,33 @@
       justify-content: center;
       flex-direction: column;
       z-index: 9999;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
-
-    #page-loader.hide {
-      opacity: 0;
-      visibility: hidden;
+      transition: opacity 0.6s ease;
     }
 
     .loader-ring {
       width: 60px;
       height: 60px;
-      border: 4px solid rgba(255, 255, 255, 0.12);
+      border: 4px solid rgba(255,255,255,0.1);
       border-top: 4px solid #a855f7;
-      border-radius: 9999px;
-      animation: spin 0.9s linear infinite;
-      margin-bottom: 16px;
-    }
-
-    .loader-text {
-      color: #cbd5e1;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Typing cursor */
+    #typing::after {
+      content: "|";
+      animation: blink 1s infinite;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+      0%,50%,100% { opacity: 1; }
+      25%,75% { opacity: 0; }
     }
 
     #backToTop {
@@ -122,518 +103,198 @@
   </style>
 </head>
 
-<body class="text-white font-sans antialiased">
-  <div id="particles" aria-hidden="true"></div>
+<body class="text-white font-sans">
 
-  <div id="page-loader">
-    <div class="loader-ring"></div>
-    <h1 class="text-purple-400 text-2xl font-bold mb-2">Marcus Miguel</h1>
-    <p class="loader-text">Inicializando portfólio...</p>
+<div id="particles"></div>
+
+<!-- Loader -->
+<div id="page-loader">
+  <div class="loader-ring"></div>
+  <h1 class="text-purple-400 text-2xl font-bold">Marcus Miguel</h1>
+  <p class="text-gray-400">Carregando portfólio...</p>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur fade">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between">
+    <a href="#inicio" class="text-xl font-bold text-purple-400">Marcus Miguel<span class="text-white">.dev</span></a>
+
+    <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+      <a href="#inicio" class="hover:text-purple-400">Início</a>
+      <a href="#sobre" class="hover:text-purple-400">Sobre</a>
+      <a href="#habilidades" class="hover:text-purple-400">Habilidades</a>
+      <a href="#projetos" class="hover:text-purple-400">Projetos</a>
+      <a href="#servicos" class="hover:text-purple-400">Serviços</a>
+      <a href="#contato" class="hover:text-purple-400">Contato</a>
+    </nav>
   </div>
+</header>
 
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur fade">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#inicio" class="text-xl font-bold text-purple-400">
-        Marcus Miguel<span class="text-white">.dev</span>
-      </a>
+<!-- HERO -->
+<section id="inicio" class="text-center mt-24 px-6 fade">
+  <h1 class="text-3xl md:text-6xl font-bold mb-6">
+    <span id="typing" class="gradient-text"></span>
+  </h1>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-300">
-        <a href="#inicio" class="hover:text-purple-400 transition">Início</a>
+  <p class="text-gray-400 max-w-xl mx-auto mb-8">
+    Desenvolvo APIs, sistemas, automações e bots focados em resolver problemas reais.
+  </p>
 
-        <div class="relative group">
-          <button class="hover:text-purple-400 transition">Sobre</button>
-          <div class="absolute hidden group-hover:block bg-slate-900 p-4 rounded-xl mt-2 w-44 border border-white/10">
-            <a href="#sobre" class="block hover:text-purple-400 mb-2">Sobre mim</a>
-            <a href="#experiencia" class="block hover:text-purple-400 mb-2">Experiência</a>
-            <a href="#hobbies" class="block hover:text-purple-400">Hobbies</a>
-          </div>
-        </div>
+  <a href="#projetos" class="bg-purple-600 px-6 py-3 rounded-xl btn">Ver projetos</a>
+</section>
 
-        <a href="#habilidades" class="hover:text-purple-400 transition">Habilidades</a>
-        <a href="#tecnologias" class="hover:text-purple-400 transition">Tecnologias</a>
-        <a href="#projetos" class="hover:text-purple-400 transition">Projetos</a>
-        <a href="#servicos" class="hover:text-purple-400 transition">Serviços</a>
-        <a href="#contato" class="hover:text-purple-400 transition">Contato</a>
-      </nav>
+<!-- SOBRE -->
+<section id="sobre" class="mt-32 px-8 max-w-4xl mx-auto fade text-center">
+  <h2 class="text-3xl font-bold mb-6">Sobre mim</h2>
+  <p class="text-gray-400">
+    Desenvolvedor Full Stack focado em Node.js, bancos de dados, Docker e automação.
+    Trabalho com criação de APIs, bots, sistemas completos e integrações.
+  </p>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades" class="mt-32 px-8 text-center fade">
+  <h2 class="text-3xl font-bold mb-8">Habilidades</h2>
+
+  <div class="flex flex-wrap justify-center gap-4">
+    <span class="tag">Node.js</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">Docker</span>
+    <span class="tag">Prisma</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">Tailwind</span>
+    <span class="tag">Bots</span>
+    <span class="tag">Automação</span>
+    <span class="tag">APIs REST</span>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos" class="mt-32 px-8 fade">
+  <h2 class="text-3xl font-bold mb-8 text-center">Projetos</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="card bg-white/5 p-6 rounded-2xl">
+      <h3 class="text-purple-400 font-bold mb-2">Nexus API</h3>
+      <p class="text-gray-400">API completa com autenticação e banco de dados.</p>
     </div>
-  </header>
 
-  <main id="inicio">
-    <section class="max-w-6xl mx-auto px-6 pt-20 md:pt-28 pb-10 fade">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span
-            class="inline-flex items-center rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300 mb-6">
-            Disponível para projetos e oportunidades
-          </span>
-
-          <span
-            class="inline-flex items-center rounded-full border border-green-400/30 bg-green-500/10 px-4 py-2 text-sm text-green-300 mb-6 ml-2">
-            Online
-          </span>
-
-          <h1 class="text-3xl md:text-6xl font-bold leading-tight mb-6">
-            Desenvolvedor Full Stack focado em
-            <span class="gradient-text">APIs, automação e sistemas escaláveis</span>
-          </h1>
-
-          <p class="text-gray-400 text-lg max-w-2xl mb-8">
-            Construo soluções robustas com <span class="text-purple-300">Node.js, PostgreSQL, Docker e Prisma</span>.
-            Meu foco é transformar ideias em sistemas completos, bem estruturados e prontos para crescer.
-            <br><br>
-            Também tenho experiência com frontend de apoio usando Tailwind, HTML e CSS para criar interfaces objetivas e funcionais.
-          </p>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#projetos"
-              class="bg-purple-700 hover:bg-purple-500 text-white px-6 py-3 rounded-xl btn font-medium">
-              Ver Meus Projetos
-            </a>
-            <a href="#contato"
-              class="border border-white/15 hover:border-purple-400 px-6 py-3 rounded-xl btn font-medium text-gray-100">
-              Entrar em Contato
-            </a>
-          </div>
-
-          <div class="mt-8 flex flex-wrap gap-3 text-sm text-gray-300">
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Node.js</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">PostgreSQL</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Docker</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Prisma</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">JavaScript</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Tailwind</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Git</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">APIs REST</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Arquitetura de Software</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Python</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Shell</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">UI/UX</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Design Thinking</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Suporte N1</span>
-            <span class="tag px-3 py-2 rounded-xl tracking-[0.12em] text-purple-300">Integração com APIs</span>
-          </div>
-        </div>
-
-        <div class="hidden lg:block">
-          <img src="/images/browser.png" alt="Imagem de destaque" class="w-full rounded-2xl">
-          <div class="mt-4 text-sm text-gray-400 text-center">
-            Imagem ilustrativa representando desenvolvimento web e tecnologia.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre" class="max-w-5xl mx-auto px-6 py-16 fade">
-      <div class="card rounded-3xl bg-white/5 p-8 md:p-10">
-        <h2 class="text-2xl font-bold mb-5">Sobre mim / About Me</h2>
-        <p class="text-gray-400 leading-8">
-          Sou desenvolvedor Full Stack com foco em criação de APIs, automação e sistemas completos.
-          <br>
-          Gosto de construir soluções organizadas, performáticas e fáceis de manter.
-          Trabalho principalmente com Node.js, PostgreSQL, Docker e Prisma, sempre buscando arquitetura limpa,
-          boa experiência para quem usa o sistema e um código que consiga evoluir com o tempo.
-        </p>
-        <br>
-        <p class="text-gray-400 leading-8">
-          Além disso, tenho experiência com frontend de apoio usando Tailwind, HTML e CSS para criar interfaces
-          objetivas e funcionais, como landing pages e painéis simples.
-        </p>
-      </div>
-    </section>
-
-    <section id="habilidades" class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Habilidades / Skills</h2>
-      <img class="mx-auto mb-8 w-20" src="/images/Habilidades.png" alt="Habilidades">
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="font-semibold text-purple-300 mb-3">Backend</h3>
-          <p class="text-gray-400 text-sm leading-7">
-            Node.js, JavaScript, APIs REST, autenticação, arquitetura de serviços e integração entre sistemas.
-          </p>
-        </div>
-
-        <div class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="font-semibold text-purple-300 mb-3">Banco de Dados</h3>
-          <p class="text-gray-400 text-sm leading-7">
-            PostgreSQL, modelagem relacional, queries, organização de dados e uso de ORM com Prisma.
-          </p>
-          <br>
-          <p class="text-gray-400 text-sm leading-7">
-            Python, Shell Scripting, UI/UX e Design Thinking.
-          </p>
-        </div>
-
-        <div class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="font-semibold text-purple-300 mb-3">DevOps</h3>
-          <p class="text-gray-400 text-sm leading-7">
-            Docker, ambiente de desenvolvimento consistente, versionamento com Git, deploy de aplicações,
-            VMs, virtualização e configuração de SMTP no Windows.
-          </p>
-        </div>
-
-        <div class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="font-semibold text-purple-300 mb-3">Frontend de apoio</h3>
-          <p class="text-gray-400 text-sm leading-7">
-            Tailwind, HTML e CSS para interfaces objetivas, landing pages e painéis simples com boa fluidez.
-          </p>
-        </div>
-
-        <div class="card bg-white/5 rounded-2xl p-6 sm:col-span-2 lg:col-span-2">
-          <h3 class="font-semibold text-purple-300 mb-3">Bots & Automação</h3>
-          <p class="text-gray-400 text-sm leading-7 mb-3">
-            Criação de bots para WhatsApp, Telegram e Discord, automação de processos, integrações com APIs e rotinas automáticas.
-          </p>
-          <p class="text-gray-400 text-sm leading-7">
-            Criação de BATS e scripts para automação de tarefas no Windows, como organização de arquivos, limpeza de sistema e rotinas de backup.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projetos" class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Projetos em destaque que eu realizei / realizarei</h2>
-      <img class="mx-auto mb-8 w-20" src="/images/projetos.png" alt="Projetos">
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        <article class="card bg-white/5 rounded-2xl p-6">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-bold text-purple-400">NEXUS API</h3>
-            <span class="text-xs text-gray-400">Projeto principal</span>
-          </div>
-          <p class="text-gray-400 mb-4">
-            API completa para autenticação, gerenciamento de usuários, integrações e automações usando API da Kitsu.
-          </p>
-          <p class="text-sm text-gray-500 mb-4">Node.js • PostgreSQL • Docker • Prisma • API</p>
-          <a href="https://github.com/marcoszsz" target="_blank" class="text-purple-400 hover:underline">Ver código →</a>
-        </article>
-
-        <article class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="text-xl font-bold text-purple-400 mb-4">Info Saúde (Sistema)</h3>
-          <p class="text-gray-400 mb-4">
-            Solução voltada para organização e visualização de informações, com foco em clareza e utilidade prática.
-          </p>
-          <p class="text-sm text-gray-500 mb-4">TypeScript • PostgreSQL • HTML • CSS</p>
-          <a href="https://github.com/marcoszsz" target="_blank" class="text-purple-400 hover:underline">Ver código →</a>
-        </article>
-
-        <article class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="text-xl font-bold text-purple-400 mb-4">Automações (Scripts e Fluxos)</h3>
-          <p class="text-gray-400 mb-4">
-            Scripts e fluxos para automatizar tarefas repetitivas, integrações e ganho de produtividade.
-          </p>
-          <p class="text-sm text-gray-500 mb-4">JavaScript • APIs • Node.js • Python • Shell</p>
-          <a href="https://github.com/marcoszsz" target="_blank" class="text-purple-400 hover:underline">Ver código →</a>
-        </article>
-
-        <article class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="text-xl font-bold text-purple-400 mb-4">Bots para WhatsApp, Telegram e Discord</h3>
-          <p class="text-gray-400 mb-4">
-            Bots personalizados para automação de mensagens, integração com APIs e facilitação de tarefas em plataformas de comunicação.
-          </p>
-          <p class="text-sm text-gray-500 mb-4">Node.js • JavaScript • APIs de WhatsApp, Telegram e Discord</p>
-          <a href="https://github.com/marcoszsz" target="_blank" class="text-purple-400 hover:underline">Ver código →</a>
-        </article>
-
-        <article class="card bg-white/5 rounded-2xl p-6">
-          <h3 class="text-xl font-bold text-purple-400 mb-4">Frontend de apoio</h3>
-          <p class="text-gray-400 mb-4">
-            Criação de interfaces objetivas e funcionais para landing pages e painéis simples usando Tailwind, HTML e CSS.
-          </p>
-          <p class="text-sm text-gray-500 mb-4">Tailwind • HTML • CSS</p>
-          <a href="https://github.com/marcoszsz" target="_blank" class="text-purple-400 hover:underline">Ver código →</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="servicos" class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Serviços prestados</h2>
-      <img src="/images/servicos.png" alt="Serviços" class="mx-auto mb-8 w-20">
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">APIs Backend</h3>
-          <p class="text-gray-400">Criação de APIs REST seguras, organizadas e escaláveis.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Automações</h3>
-          <p class="text-gray-400 mb-2">Automação de processos e integrações entre sistemas.</p>
-          <p class="text-sm text-gray-500">JavaScript • Node.js • Python</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Sistemas Web</h3>
-          <p class="text-gray-400 mb-2">Desenvolvimento de sistemas completos.</p>
-          <p class="text-sm text-gray-500">JavaScript • Node.js • Python</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="tecnologias" class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Tecnologias que eu domino/uso</h2>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Node.js</h3>
-          <p class="text-gray-400">Desenvolvimento de APIs, automações e sistemas completos usando Node.js.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">PostgreSQL</h3>
-          <p class="text-gray-400">Modelagem relacional, queries avançadas e uso de ORM com Prisma.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Docker</h3>
-          <p class="text-gray-400">Criação de ambientes consistentes e deploy de aplicações.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Prisma</h3>
-          <p class="text-gray-400">ORM para interação com bancos de dados com mais organização e produtividade.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">HTML</h3>
-          <p class="text-gray-400">Criação de interfaces objetivas e funcionais para landing pages e painéis simples.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">CSS</h3>
-          <p class="text-gray-400">Estilização de interfaces e criação de layouts responsivos usando CSS.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl md:col-span-2">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Tailwind</h3>
-          <p class="text-gray-400">Criação de interfaces rápidas, modernas e eficientes usando Tailwind CSS.</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Git</h3>
-          <p class="text-gray-400">Versionamento de código, colaboração e controle de mudanças.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Arquitetura que utilizo</h2>
-      <div class="card bg-white/5 p-6 rounded-2xl text-center">
-        <p class="text-gray-400 text-lg">
-          Frontend → API Node.js → Banco de Dados → Docker → Deploy
-        </p>
-      </div>
-    </section>
-
-    <section id="hobbies" class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Hobbies e Interesses</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Tecnologia e Inovação</h3>
-          <p class="text-gray-400">
-            Explorar novas tecnologias, tendências em desenvolvimento e inovações no mundo da tecnologia.
-          </p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Jogos e Entretenimento</h3>
-          <p class="text-gray-400">
-            Apreciar jogos, filmes e séries, especialmente aqueles com temáticas de ficção científica e fantasia.
-          </p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Música e Arte</h3>
-          <p class="text-gray-400">
-            Curiosidade por música, arte digital e design, buscando inspiração para projetos criativos.
-          </p>
-          <p class="text-gray-400 text-sm leading-7 mt-3">
-            Interesse em design de interfaces, experiência do usuário e criação de soluções agradáveis de usar.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-20 max-w-6xl mx-auto px-6 text-center fade">
-      <h2 class="text-3xl font-bold mb-8">Números</h2>
-
-      <div class="grid md:grid-cols-5 gap-6">
-        <div>
-          <h3 class="text-4xl text-purple-400 font-bold">5+</h3>
-          <p class="text-gray-400">APIs desenvolvidas</p>
-        </div>
-
-        <div>
-          <h3 class="text-4xl text-purple-400 font-bold">3+</h3>
-          <p class="text-gray-400">Sistemas completos</p>
-        </div>
-
-        <div>
-          <h3 class="text-4xl text-purple-400 font-bold">10+</h3>
-          <p class="text-gray-400">Automações</p>
-        </div>
-
-        <div>
-          <h3 class="text-4xl text-purple-400 font-bold">Bots</h3>
-          <p class="text-gray-400">WhatsApp / Telegram / Discord</p>
-        </div>
-
-        <div>
-          <h3 class="text-4xl text-purple-400 font-bold">1800+</h3>
-          <p class="text-gray-400">Chamados no Service Desk</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Experiência / Formação</h2>
-
-      <div class="space-y-8">
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-bold text-purple-400">Desenvolvedor Full Stack</h3>
-            <span class="text-xs text-gray-400">2021 - Presente</span>
-          </div>
-          <p class="text-gray-400 mb-4">
-            Desenvolvimento de APIs, automações e sistemas completos para clientes diversos, com foco em soluções eficientes e escaláveis.
-          </p>
-          <p class="text-sm text-gray-500">Node.js • PostgreSQL • Docker • Prisma</p>
-        </div>
-
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-bold text-purple-400">Suporte Técnico - GTI (SESA)</h3>
-            <span class="text-xs text-gray-400">2024 - Presente</span>
-          </div>
-          <p class="text-gray-400 mb-4">
-            Atendimento e resolução de problemas técnicos, suporte a usuários e manutenção de sistemas.
-          </p>
-          <p class="text-sm text-gray-500">Suporte técnico • Atendimento ao cliente</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-6 py-16 fade">
-      <h2 class="text-3xl font-bold mb-8 text-center">Formação Acadêmica</h2>
-
-      <div class="space-y-8">
-        <div class="card bg-white/5 p-6 rounded-2xl">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-bold text-purple-400">Técnico em Desenvolvimento de Sistemas - SENAI</h3>
-            <span class="text-xs text-gray-400">2020 - 2024</span>
-          </div>
-          <p class="text-gray-400 mb-4">
-            Formação técnica em desenvolvimento de sistemas, com foco em programação, banco de dados, redes e infraestrutura.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato" class="max-w-5xl mx-auto px-6 py-16 fade">
-      <div class="card bg-white/5 rounded-3xl p-8 md:p-10 text-center">
-        <h2 class="text-3xl font-bold mb-4">Contato</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto mb-8">
-          Fale comigo para discutir seu projeto, automação, sistema web, APIs ou qualquer necessidade específica.
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://github.com/marcoszsz" target="_blank"
-            class="border border-gray-600 hover:border-purple-400 px-6 py-3 rounded-xl btn">
-            GitHub
-          </a>
-          <a href="mailto:marksdesv@icloud.com"
-            class="border border-gray-600 hover:border-purple-400 px-6 py-3 rounded-xl btn">
-            Email
-          </a>
-          <a href="#inicio"
-            class="bg-purple-600 hover:bg-purple-500 px-6 py-3 rounded-xl btn">
-            Voltar ao início
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/10 mt-10">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500 text-sm">
-      © <span id="year"></span> Marcus Miguel. Todos os direitos reservados.
+    <div class="card bg-white/5 p-6 rounded-2xl">
+      <h3 class="text-purple-400 font-bold mb-2">Sistema Marmitex</h3>
+      <p class="text-gray-400">Sistema de pedidos com dashboard.</p>
     </div>
-  </footer>
 
-  <button id="backToTop"
-    class="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-500 px-4 py-3 rounded-xl shadow-lg z-50">
-    ↑
-  </button>
+    <div class="card bg-white/5 p-6 rounded-2xl">
+      <h3 class="text-purple-400 font-bold mb-2">Dashboard</h3>
+      <p class="text-gray-400">Dashboard com gráficos e autenticação.</p>
+    </div>
+  </div>
+</section>
 
-  <script>
-    tsParticles.load("particles", {
-      background: { color: "transparent" },
-      fpsLimit: 60,
-      particles: {
-        number: { value: 40, density: { enable: true, area: 900 } },
-        color: { value: "#7c3aed" },
-        opacity: { value: 0.25 },
-        size: { value: { min: 1, max: 3 } },
-        move: { enable: true, speed: 1, outModes: { default: "bounce" } },
-        links: {
-          enable: true,
-          distance: 130,
-          color: "#7c3aed",
-          opacity: 0.12,
-          width: 1
-        }
-      },
-      detectRetina: true
-    });
+<!-- SERVIÇOS -->
+<section id="servicos" class="mt-32 px-8 fade">
+  <h2 class="text-3xl font-bold mb-8 text-center">Serviços</h2>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    }, { threshold: 0.15 });
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="card bg-white/5 p-6 rounded-2xl">
+      <h3 class="text-purple-400 font-bold">APIs</h3>
+      <p class="text-gray-400">Desenvolvimento de APIs REST.</p>
+    </div>
 
-    document.querySelectorAll(".fade").forEach((el) => observer.observe(el));
+    <div class="card bg-white/5 p-6 rounded-2xl">
+      <h3 class="text-purple-400 font-bold">Automações</h3>
+      <p class="text-gray-400">Automação de processos.</p>
+    </div>
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    <div class="card bg-white/5 p-6 rounded-2xl">
+      <h3 class="text-purple-400 font-bold">Bots</h3>
+      <p class="text-gray-400">Bots para WhatsApp e Telegram.</p>
+    </div>
+  </div>
+</section>
 
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector("header");
-      const btn = document.getElementById("backToTop");
+<!-- CONTATO -->
+<section id="contato" class="mt-32 text-center px-6 fade">
+  <h2 class="text-3xl font-bold mb-8">Contato</h2>
 
-      if (window.scrollY > 50) {
-        header.classList.add("bg-slate-950/90", "backdrop-blur");
-      } else {
-        header.classList.remove("bg-slate-950/90", "backdrop-blur");
-      }
+  <div class="space-x-4">
+    <a href="https://github.com/marcoszsz" class="border px-6 py-3 rounded-xl">GitHub</a>
+    <a href="mailto:marksdesv@icloud.com" class="border px-6 py-3 rounded-xl">Email</a>
+  </div>
+</section>
 
-      if (window.scrollY > 300) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
-    });
+<footer class="mt-20 text-center text-gray-500 pb-6 fade">
+  © 2026 Marcus Miguel
+</footer>
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute("href"));
-        if (target) target.scrollIntoView({ behavior: "smooth" });
-      });
-    });
+<button id="backToTop" class="fixed bottom-6 right-6 bg-purple-600 px-4 py-2 rounded-lg">↑</button>
 
-    document.getElementById("backToTop").addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+<script>
+tsParticles.load("particles", {
+  particles: {
+    number: { value: 40 },
+    size: { value: 2 },
+    move: { speed: 1 },
+    opacity: { value: 0.3 }
+  }
+});
 
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("page-loader");
-      loader.classList.add("hide");
+/* Fade */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+});
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 600);
-    });
-  </script>
+/* Loader */
+window.addEventListener("load", () => {
+  document.getElementById("page-loader").style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById("page-loader").style.display = "none";
+  }, 600);
+});
+
+/* Typing */
+const texts = [
+  "Desenvolvedor Full Stack",
+  "Especialista em APIs",
+  "Automação e Bots",
+  "Sistemas Escaláveis"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type() {
+  if (count === texts.length) count = 0;
+  currentText = texts[count];
+  letter = currentText.slice(0, ++index);
+  document.getElementById("typing").textContent = letter;
+
+  if (letter.length === currentText.length) {
+    setTimeout(() => {
+      index = 0;
+      count++;
+      setTimeout(type, 300);
+    }, 1500);
+  } else {
+    setTimeout(type, 50);
+  }
+})();
+
+/* Back to top */
+const btn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) btn.style.display = "block";
+  else btn.style.display = "none";
+});
+btn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
 </body>
-
 </html>
